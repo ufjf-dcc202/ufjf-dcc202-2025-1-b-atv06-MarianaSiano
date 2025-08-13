@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 else 
                     celulaDiv.classList.add('fora');
                 
-                tabuleiroContainer.appendChild(celulaDiv);
+                tabuleiro.appendChild(celulaDiv);
             });
         });
         adicionaListeners();
@@ -74,4 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-})
+
+    //Adiciona o listener de evento ao conteiner do tabuleiro
+    function adicionaListeners() {
+        //Usamos um único listener no pai para melhor performance
+        tabuleiro.addEventListener('click', handleCliqueCelula);
+    }
+
+    //Ponto de entrada
+    JOGO.iniciar();
+    desenharTabuleiro();
+});
