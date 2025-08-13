@@ -60,4 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    //Verifica se o jogo terminou e exibe a mensagem apropriada
+    function verificarFim() {
+        if(JOGO.verificarFimJogo()) {
+            const pecasRestantes = JOGO.tabuleiro.flat().filter(p => p === 1).length;
+            if(pecasRestantes === 1) {
+                mensagemFimJogo.textContent = 'Parabéns, você é um gênio!!!!';
+                mensagemFimJogo.style.color = 'var(--cor-texto-vitoria)';
+            } else {
+                mensagemFimJogo.textContent = `Fim de jogo! Restaram ${pecasRestantes} peças.`;
+                mensagemFimJogo.style.color = 'var(--cor-texto-derrota)';
+            }
+        }
+    }
 })
