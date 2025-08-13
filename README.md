@@ -2,6 +2,13 @@
 
 # TODOS OS DIREITOS RESERVADOS
 
+### Desenvolvedor(a)
+* Nome: Mariana Siano
+* Matricula: 202465182A
+* Disciplina: DCC202 - Desenvolvimento Web
+* Turma: B
+* Semestre: 2025.1
+
 ## Atividade 6 - Desenvolvimento Web - Turma B
 
 * Usando como modelo o estilo de separação por módulos realizado em sala de aula onde criamos o jogo de inverter as peças (atv05), crie uma aplicação web para o jogo "Resta Um". Use commits sequenciais, com propósito bem definido e identificados. Separe em módulos e isole o código que realiza a lógica do código que controla a interface.
