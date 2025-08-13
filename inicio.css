@@ -66,3 +66,34 @@ h1 {
     border: 2px dashed var(--cor-vazio-borda);
     cursor: pointer;
 }
+
+/* Celula que contém uma peça */
+.peca {
+    background-color: var(--cor-peca);
+    cursor: pointer;
+    border: 4px solid var(--cor-peca-borda);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 90%;
+    height: 90%;
+}
+
+.peca:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para quando uma peça é selecionada */
+.selecionada {
+    background-color: var(--cor-selecionada);
+    border-color: #f2a6c4;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--cor-sombra-selecionada);
+}
+
+/* --- Mensagens Finais --- */
+#mensagem-fim-jogo {
+    margin-top: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    height: 30px; /* Garante espaço mesmo quando vazio */
+}
