@@ -1,6 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head></head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo Resta Um</title>
 
-    <body></body>
+        <!-- Importações de folhas de estilo e de fontes -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="inicio.css">
+
+        <!-- Scripts para carregamento otimizado -->
+        <script src="logica.js" defer></script>
+        <script src="interface.js" defer></script>
+    </head>
+
+    <body>
+        <header class="info-header">
+            <p><strong>Nome: </strong>Mariana Siano</p>
+            <p><strong>Matricula: </strong>202465182A</p>
+            <p><strong>Disciplina: </strong>DCC202 - Desenvolvimento Web</p>
+            <p><strong>Turma: </strong>B</p>
+            <p><strong>Semestre: </strong>2025.1</p>
+
+            <main class="game">
+                <h1>Resta Um</h1>
+                <div id="tabuleiro"></div>
+                <div id="mensagem-fim-jogo"></div>
+            </main>
+
+            <footer class="info-footer">
+                <p>&copy; 2025 TODOS OS DIREITOS RESERVADOS.</p>
+            </footer>
+        </header>
+    </body>
 </html>
