@@ -34,5 +34,28 @@ const jogo = {
             return true;
         }
         return false;
+    },
+
+    /**
+     * Verifica se um movimento para uma célula de destino é válido.
+     * @param {number} linhaDestino - A linha de destino.
+     * @param {number} colunaDestino - A coluna de destino.
+     * @returns {boolean} - True se o movimento for válido.
+     */
+    ehMovimentoValido: function(linhaDestino, colunaDestino) {
+        if(!this.pecaSelecionada)
+            return false;
+        if(this.tabuleiro[linhaDestino][colunaDestino] !== 0)
+            return false;
+
+        const { linha: linhaOrigem, coluna: colunaOrigem } = this.pecaSelecionada;
+        const diffLinha = Math.abs(linhaOrigem - linhaDestino);
+        const diffColuna = Math.abs(colunaOrigem - colunaDestino);
+
+        //Movimento horizontal de duas casas
+        if(diffLinha === 0 && diffColuna === 2) {
+            const colunaMeio = (colunaOrigem + colunaDestino) / 2;
+            return this.tabuleiro[linhaOrigem][colunaMeio] === 1;
+        }
     }
 }
