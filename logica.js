@@ -57,5 +57,12 @@ const jogo = {
             const colunaMeio = (colunaOrigem + colunaDestino) / 2;
             return this.tabuleiro[linhaOrigem][colunaMeio] === 1;
         }
-    }
+
+        //Movimento vertical de duas casas
+        if(diffLinha === 2 && diffColuna === 0) {
+            const linhaMeio = (linhaOrigem + linhaDestino) / 2;
+            return this.tabuleiro[linhaMeio][colunaOrigem] === 1;
+        }
+        return false;
+    },
 }
