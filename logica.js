@@ -85,5 +85,43 @@ const jogo = {
 
         this.pecaSelecionada = null; //Limpa a seleção
         return true;
+    },
+
+    /**
+     * Verifica se o jogo terminou (não há mais movimentos possíveis).
+     * @returns {boolean} - True se o jogo acabou.
+     */
+    verificarFimDeJogo: function() {
+        for(let i = 0; i < 7; i++) {
+            for(let j = 0; j < 7; j++) {
+                if(this.tabuleiro[i][j] === 1) {//Se houver uma peça
+                    //Tenta todos os movimentos possíveis a partir desta peça
+                    if(this.temMovimentoValido(i, j)) {
+                        return false; //Jogo não acabou
+                    }
+                }
+            }
+        }
+        return true; //Nenhum movimento possível encontrado
+    },
+
+    //Função auxiliar para verificar se uma peça específica tem algum movimento válido.
+    temMovimentoValido: function(linha, coluna) {
+        const movimentos = [[0, 2], [0, -2], [2, 0], [-2, 0]];
+        for(const [dl, dc] of movimentos) {
+            const lDest = linha + dl;
+            const cDest = coluna + dc;
+
+            //Verificas se o destino está dentro dos limites
+            if(lDest >= 0 && lDest < 7 && cDest >= 0 && cDest < 7) {
+                this.pecaSelecionada = { linha, coluna }
+                if(this.ehMovimentoValido(lDest, cDest)) {
+                    this.pecaSelecionada = null; //Limpa a seleção de teste
+                    return true;
+                }
+            }
+        }
+        this.pecaSelecionada = null; //Limpa a seleção de teste
+        return false;
     }
 }
