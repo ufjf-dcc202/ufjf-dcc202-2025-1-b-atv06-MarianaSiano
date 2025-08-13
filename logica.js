@@ -65,4 +65,25 @@ const jogo = {
         }
         return false;
     },
+
+    /**
+     * Executa o movimento da peça selecionada para o destino.
+     * @param {number} linhaDestino - A linha de destino.
+     * @param {number} colunaDestino - A coluna de destino.
+     * @returns {boolean} - True se o movimento foi realizado.
+     */
+    moverPeca: function(linhaDestino, colunaDestino) {
+        if(!this.ehMovimentoValido(linhaDestino, colunaDestino))
+            return false;
+
+        const { linha: linhaOrigem, coluna: colunaOrigem } = this.pecaSelecionada;
+
+        //Atualiza o tabuleiro
+        this.tabuleiro[linhaDestino][colunaDestino] = 1; //Destino ganha a peça
+        this.tabuleiro[linhaOrigem][colunaOrigem] = 0; //Origem fica vazia
+        this.tabuleiro[(linhaOrigem + linhaDestino) / 2][(colunaOrigem + colunaDestino) / 2] = 0; //Remove peça
+
+        this.pecaSelecionada = null; //Limpa a seleção
+        return true;
+    }
 }
