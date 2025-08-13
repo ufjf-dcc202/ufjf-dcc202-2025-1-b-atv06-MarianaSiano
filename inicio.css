@@ -1,0 +1,32 @@
+/* Estilos Gerais */
+:root {
+    --cor-fundo: #FEFAE0;
+    --cor-tabuleiro: #E9EDC9;
+    --cor-peca: #A2D2FF;
+    --cor-peca-borda: #74A4CC;
+    --cor-vazio: #FAEDCD;
+    --cor-vazio-borda: #D4A373;
+    --cor-selecionada: #FFC8DD;
+    --cor-sombra-selecionada: rgba(255, 200, 221, 0.7);
+    --cor-texto-principal: #606C38;
+    --cor-texto-vitoria: #283618;
+    --cor-texto-derrota: #BC4749;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 700px;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--cor-peca);
+}
