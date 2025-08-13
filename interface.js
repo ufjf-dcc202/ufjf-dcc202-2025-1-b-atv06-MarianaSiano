@@ -31,4 +31,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         adicionaListeners();
     }
+
+    //Lista com o clique do usuário em qualquer célula do tabuleiro
+    function handleCliqueCelula(event) {
+        const celulaClicada = event.target.closest('.celula');
+        if(!celulaClicada || celulaClicada.classList.contains('fora'))
+            return;
+
+        const linha = parseInt(celulaClicada.dataset.linha);
+        const coluna = parseInt(celulaClicada.dataset.coluna);
+
+        //Se uma peça já selecionada, tenta mover ou deselecionar
+        if(JOGO.pecaSelecionada) {
+            const moveu = JOGO.moverPeca(linha, coluna);
+
+            //Limpa a aparência da seleção anterior, independentemente do resultado
+            pecaSelecionada.classList.remove('selecionada');
+            pecaSelecionada = null;
+
+            if(moveu) {
+                desenharTabuleiro(); //Redesenha o tabuleiro após o movimento
+                verificarFim();
+            }
+        } else { //Nenhuma peça selecionada
+            if(celulaClicada.classList.contains('peca') && JOGO.selecionarPaca(linha, coluna)){
+                pecaSelecionada = celulaClicada;
+                pecaSelecionada.classList.add('selecionada');
+            }
+        }
+    }
 })
