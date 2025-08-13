@@ -84,7 +84,7 @@ h1 {
 /* Estilo para quando uma peça é selecionada */
 .selecionada {
     background-color: var(--cor-selecionada);
-    border-color: #f2a6c4;
+    border-color: #F2A6C4;
     transform: scale(1.1);
     box-shadow: 0 0 20px var(--cor-sombra-selecionada);
 }
@@ -96,4 +96,37 @@ h1 {
     font-weight: bold;
     text-align: center;
     height: 30px; /* Garante espaço mesmo quando vazio */
+}
+
+/* Estilos do Cabeçalho e Rodapé */
+.info-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-bottom: 1px solid #DEE2E6;
+}
+
+.info-header p {
+    margin: 5px 0;
+    color: #6C757D;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-footer {
+    margin-top: 40px;
+    padding: 15px;
+    font-size: 14px;
+    color: #6C757D;
+    text-align: center;
+    border-top: 1px solid #DEE2E6;
+    width: 100%;
+    box-sizing: border-box;
 }
