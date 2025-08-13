@@ -30,3 +30,39 @@ h1 {
     margin-bottom: 20px;
     color: var(--cor-peca);
 }
+
+/* Estilos do Tabuleiro com o uso de Grid */
+#tabuleiro {
+    display: grid;
+    /* Cria um grid de 7 colunas para o tabuleiro */
+    grid-template-columns: repeat(7, 1fr);
+    width: clamp(300px, 90vw, 490px);
+    height: clamp(300px, 90vw, 490px);
+    border: 1px solid #CCD5AE;
+    background-color: var(--cor-tabuleiro);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+    padding: 10px;
+    gap: 5px;
+}
+
+.celula {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Célula que não faz parte do tabuleiro */
+.fora {
+    background-color: transparent;
+    border: none;
+}
+
+/* Espaço vazio onde uma peça pode se mover */
+.vazio {
+    background-color: var(--cor-vazio);
+    border: 2px dashed var(--cor-vazio-borda);
+    cursor: pointer;
+}
