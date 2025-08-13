@@ -91,7 +91,7 @@ const JOGO = {
      * Verifica se o jogo terminou (não há mais movimentos possíveis).
      * @returns {boolean} - True se o jogo acabou.
      */
-    verificarFimDeJogo: function() {
+    verificarFimJogo: function() {
         for(let i = 0; i < 7; i++) {
             for(let j = 0; j < 7; j++) {
                 if(this.tabuleiro[i][j] === 1) {//Se houver uma peça
